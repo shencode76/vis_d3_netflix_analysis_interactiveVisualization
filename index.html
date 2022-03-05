@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<!-- Metadata -->
+
+<head>
+  <meta charset='utf-8'>
+
+  <!-- Title -->
+  <title>Assignment: Basic charts in D3</title>
+
+  <!-- CSS Styling -->
+  <link rel='stylesheet' href='style.css'>
+
+  <!-- Favicons -->
+  <link rel='apple-touch-icon' sizes='180x180' href='favicons/apple-touch-icon.png'>
+  <link rel='icon' type='image/png' sizes='32x32' href='favicons/favicon-32x32.png'>
+  <link rel='icon' type='image/png' sizes='16x16' href='favicons/favicon-16x16.png'>
+  <link rel='manifest' href='favicons/site.webmanifest'>
+  <link rel='shortcut icon' href='favicons/favicon.ico'>
+  <meta name='msapplication-TileColor' content='#da532c'>
+  <meta name='msapplication-config' content='favicons/browserconfig.xml'>
+  <meta name='theme-color' content='#ffffff'>
+</head>
+
+<!-- Main page content -->
+
+<body>
+
+  <!-- Update this with your GitHub repo URL -->
+  <span id='forkongithub'><a href='https://github.com/NEU-DS-4200-S22-Students/a4--d3-basic-charts-shencode76'>Fork me on
+      GitHub</a></span>
+
+  <!-- Writeup -->
+  <div class='content-column'>
+    <h1>Assignment: Basic charts in D3</h1>
+    <h2>Yuxi Shen</h2>
+
+    <h3> Abstract </h3>
+    <p>
+      There will be two visualizations on this web page, and both of them showing the data 
+      from Netflix company. The datasets for these two data visualizations are acquired from 
+      Kaggle website, and the links are provided in the ending area. 
+      <br> 
+      <br>
+      In the grouped bar chart visualization, I want to show my audiences the difference between the either the 
+      number of movies or the number of TV shows between the United States and the countries 
+      which has the top 10 largest Netflix film libraries. It is clear to see that the top 10 countries have more than 4500 
+      movies in their national Netflix libraries. In constrast, US has around 4000 movies in its library. This grouped bar chart 
+      also shows that all 11 countries have a similar number of TV shows in their libraries. Therefore, if Netflix wants to attract 
+      more US customers, it should include more movies in the US-region movie library. 
+      <br>
+      <br>
+      In the line chart, I want to display that from 2003 to 2017 on TV14 channel, there are more and more TV shows were produced by netflix. 
+      From the original dataset, I found that there are increasing TV shows being published over years on each TV channel. So, 
+      I want to focus on TV14 channel to examine the amount of TV shows it produces between 2004 and 2007. 
+      The original dataset of this visualization is also found on Kaggle, and the link is provided below. 
+    </p>
+
+    <h3>Simple formatting instructions</h3>
+
+    <p>
+      Use <code>&lt;p&gt;&lt;/p&gt;</code> tags to enclose a paragraph in html. <br>
+      Use <code>&lt;h2&gt;&lt;/h2&gt;</code> to enclose a heading. <br>
+      Use <code>&lt;br&gt;</code> to force a line break.
+    </p>
+
+    <p>
+      There are two pre-made <code>div</code> in this document that will hold your visualizations. The first one has id
+      <code>vis1</code>, the second one has <code>vis2</code>. Write your explanation and analysis close to each of your
+      visualization.
+      <br>
+      <br>
+    </p>
+
+    <h3>Visualizations</h3>
+    <p> <b>Descriptive prose: </b>
+      <em>links are provided in the Acknowledgments area.</em>
+      <br>
+      <b>1. Explain the dataset you choose to use and why you chose it:</b>>
+      <br>
+      In this assignment, the database I choose comes from the data website Kaggle. 
+      The two databases I chose are both from Netflix. The reason for choosing the database of
+       this company is that, first of all, I am crazy about the TV series produced by Netflix. In addition, 
+      I hope to have a better understanding of the growing trend of the company's TV series production over 
+      the years through the visualization I made.
+      <br>
+      <b> 2. State for each visualization what types of data you used</b>
+      <br>
+      <u>1st Visualization: </u>
+      <br>Categorical data used for this visualization, categorized by countries. 
+      <br>Marks: lines and area
+      <br>Channel: size and area
+      <br>
+      <u>2nd Visualization:</u>
+      <br>Ordinal data used for this visualization, following year timeline. 
+      <br>Marks: lines
+      <br>Channel: position 
+      <br>
+      <b>3. Justify why your encoding (i.e. bar or line) is appropriate for the type for the data you are visualizing in them</b>
+      <br>
+      1. I use this grouped bar chart since I want to know the quantity of movies/ TV shows(the vertical spatial position channel for the quantitative attribute)
+       were provided to each country(the horizontal spatial position channel for the categorical attribute). 
+       I can see the values of items with the length of each bar clearly. 
+      I can show the grouped comparison between different countries of numbers of movies and TV shows. Only an grouped bar chart can do this. 
+      <br>
+      2. Line chart helps me track changes of numbers of TV shows(the vertical spatial position channel for the quantitative attribute) 
+      over time (the horizontal spatial position channel for the ordered attribute).
+       When smaller changes exist, the line chart is better than the bar plot.
+       At the same time, the line chart has only one line on it, so it looks cleaner than the bar chart. 
+
+    </p>
+    <h4>The first visualization aims to shows the audiences:</h4>
+
+    <p>
+        1. The comparison of number of TV shows and movies in each country. 
+      <br>  
+        2. The comparison of number of TV shows and movies between each country. 
+      <br>  
+        3. The comparison of number of TV shows and movies between the other ten countries and the United States.
+      <br> 
+      <br>
+        The x scale is the names of countries, and the y scale represents the quantity of movies/TV shows. 
+        Please slip your mouse over the bars to highlight the bars which you want them to stand out. 
+    </p>
+
+    <!-- Visualization goes here -->
+    <div class='vis-holder' id='vis1'></div>
+
+    <h4>
+      The second visualization goes here:
+    </h4>
+
+    <p>
+      1. This line chart tries to show that the number of Netflix shows on Channel 14 is increasing, especially from 2011 
+      and 2017. The reason behind the steep rise of TV might be the streaming service that Netflix started offering globally. 
+      By 2016 its streaming service was available in more than 190 countries and territories. 
+      <br>
+      <br>
+      2. As the number of shows is increasing, there are more and more users subscribe to Netflix to watch TV shows. 
+      Because the number of TV programs has increased, so has the diversity of TV programs. 
+      Then the number of subscribers to the channel or Netflix service will also increase, 
+      which is also a positive stimulus to the growth of the number of TV programs. 
+      The source of this positive stimulation is also Netflix's consistently high level of quality. 
+      For example, my personal favorites Grey's Anatomy and Sherlock were released in 2016.
+    </p>
+
+    <!-- Visualization goes here -->
+    <div class='vis-holder' id='vis2'></div>
+
+    <h2>Acknowledgments</h2>
+
+    <p>
+      <em>List here where any code, packages/libraries, text, images, designs, etc. that you leverage come from.</em>
+    </p>
+
+    <ul>
+      <li><a href = 
+        'https://www.kaggle.com/prasertk/netflix-subscription-price-in-different-countries/version/2?select=netflix+price+in+different+countries.csv'>
+        Netflix dataset from Kaggle</a>
+        This is the dataset for first visualization. It is downloaded from Netflix on Kaggle, which include 5 columns: number of TV shows, 
+        number of movie shows, and price each month among different memberships(basic, standard, premium).
+      </li>
+      <li><a href = 'https://www.kaggle.com/chasewillden/netflix-shows'>
+        Netflix shows over ten years on each TV channel </a>
+      This is the dataset from Netflex on Kaggle. I used this dataset to produce the second visualization.
+    </li>
+      <li><a href='https://www.d3-graph-gallery.com/graph/line_cursor.html'>
+        Line chart with cursor showing exact value</a>
+      from the d3 graph gallery website. 
+      </li>
+      <li><a href='https://www.d3-graph-gallery.com/graph/barplot_grouped_basicWide.html'>
+        Most basic grouped barplot code in d3</a>
+        from the d3 graph gallery website. 
+      </li>
+      <li><a href='https://d3js.org/'>
+          D3: Data-Driven Documents</a>
+        by Mike Bostock is used for manipulating the DOM to create visualizations.
+      </li>
+      <li><a href='https://codepo8.github.io/css-fork-on-github-ribbon/#'>
+          Pure CSS responsive 'Fork me on GitHub' ribbon</a>
+        by Chris Heilmann is used to create the banner that links back to the source code repository.
+      </li>
+    </ul>
+  </div>
+
+  <!-- Scripts at the end avoid need for dealing with async, defer, or onload event handlers -->
+  
+  <!-- Load the d3.js library from the /lib folder here (version 7 minified) -->
+  <script src='lib/d3.v7.3.0/d3.js'></script>
+  <script src = 'js/main.js'></script>
+
+  <!--colors-->
+  <script src="https://cdn.jsdelivr.net/npm/d3-color@3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3-interpolate@3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3-scale-chromatic@3"></script>
+
+</body>
+
+</html>
